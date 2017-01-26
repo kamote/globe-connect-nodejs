@@ -91,12 +91,9 @@ var Sms = function(sender, token) {
         
         // prepare request payload
         var payload = {
-            "outboundSMSMessageRequest": {
-                "senderAddress": "tel:" + this.sender,
-                "outboundSMSTextMessage": {
-                    "message" : this.msg},
-                "address" : ["tel:" + this.address]}};
-        
+            message: this.msg, 
+            address: this.address
+        }
         // initialize curl
         var curl = new Curl();
         // set request url
